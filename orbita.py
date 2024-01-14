@@ -47,14 +47,14 @@ def on_calculate():
         y = a * np.sqrt(1 - e**2) * np.sin(E)
         planet.set_data(x, y)
 
-        # Update orbit path
+        #orbit path
         orbit_path_x.append(x)
         orbit_path_y.append(y)
         orbit.set_data(orbit_path_x, orbit_path_y)
 
         return planet, orbit
 
-    # Creating the animation with a faster interval
+    # Creating the animation
     ani = FuncAnimation(fig, update, frames=num_steps, blit=True, interval=20, repeat=False)
     canvas.draw()
 
@@ -83,7 +83,7 @@ time_steps_entry.grid(column=1, row=3)
 calculate_button = ttk.Button(window, text="Calculate", command=on_calculate)
 calculate_button.grid(column=1, row=4)
 
-# Matplotlib plot setup
+
 # Matplotlib plot setup
 fig, ax = plt.subplots()
 planet, = ax.plot([], [], 'ro')  # Planet marker
